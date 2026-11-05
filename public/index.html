@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>GAME HUB</title><link rel="stylesheet" href="/style.css">
+<script src="https://paxta.online/js/paxtagram-web-app.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div class="bg-glow"></div>
+<header class="topbar"><div class="brand"><span class="brand-icon">✦</span><div><b>GAME HUB</b><small>PAХTAGRAM ARCADE</small></div></div><div class="wallet">✦ <b id="coins">---</b></div></header>
+<main>
+<section class="hero"><div class="hero-copy"><span class="eyebrow">WELCOME TO THE ARENA</span><h1>O‘yin boshlash<br><em>vaqti keldi.</em></h1><p>Do‘stlaring bilan bellash. Rekordlarni yangila.</p><button class="primary" id="playNow">O‘YINLARNI KO‘RISH <span>↗</span></button></div><div class="hero-art"><div class="orb">♟</div><div class="orbit o1"></div><div class="orbit o2"></div><span class="float f1">✦</span><span class="float f2">◈</span></div></section>
+<section class="section-head"><div><span class="eyebrow">CHOOSE YOUR MODE</span><h2>O‘yinlar</h2></div><span class="live-dot">● ARENA</span></section>
+<section class="games">
+<article class="game-card chess" data-game="chess"><div class="game-art chess-art">♟</div><div class="game-info"><span class="tag">STRATEGY</span><h3>Shaxmat</h3><p>Aql va strategiya jangi</p><div class="game-bottom"><span>✦ <b id="chessPrice">20</b> coin</span><button class="play-btn" data-play="chess">O‘YNASH ↗</button></div></div></article>
+<article class="game-card pool" data-game="billiards"><div class="game-art pool-art"><span>🎱</span></div><div class="game-info"><span class="tag">SPORT</span><h3>Bilyard</h3><p>Aniq zarba — g‘alaba</p><div class="game-bottom"><span>✦ <b id="billiardsPrice">20</b> coin</span><button class="play-btn" data-play="billiards">O‘YNASH ↗</button></div></div></article>
+<article class="game-card snake" data-game="snake"><div class="game-art snake-art">〰</div><div class="game-info"><span class="tag">ARCADE</span><h3>Neon Snake</h3><p>Rekordingni yangila</p><div class="game-bottom"><span>✦ <b id="snakePrice">10</b> coin</span><button class="play-btn" data-play="snake">O‘YNASH ↗</button></div></div></article>
+<article class="game-card soon"><div class="game-art soon-art">＋</div><div class="game-info"><span class="tag">COMING SOON</span><h3>Yangi o‘yinlar</h3><p>Yaqinda yangi arenalar</p><div class="game-bottom"><span>TEZ KUNDA</span><button disabled>SOON</button></div></div></article>
+</section>
+<section class="lower-grid"><div class="panel"><div class="panel-title"><div><span class="eyebrow">TOP PLAYERS</span><h2>Reyting</h2></div><span>🏆</span></div><div id="leaderboard" class="leaderboard">Yuklanmoqda...</div></div>
+<div class="panel donate"><span class="eyebrow">SUPPORT THE PROJECT</span><div class="donate-icon">✧</div><h2>Bizni qo‘llab-quvvatlang</h2><p>GAME HUB yanada rivojlanishi uchun ixtiyoriy donat qiling.</p><div class="donate-actions"><button class="donate-btn" data-donate="10">10 ★</button><button class="donate-btn" data-donate="25">25 ★</button><button class="donate-btn" data-donate="50">50 ★</button><button class="donate-btn" data-donate="100">100 ★</button></div></div></section>
+<section class="admin-panel hidden" id="adminPanel"><div class="panel-title"><div><span class="eyebrow">CONTROL CENTER</span><h2>Admin panel</h2></div><span>⚙</span></div><div class="stats" id="adminStats"></div><div class="settings-grid"><label>Shaxmat narxi<input id="setChess" type="number" min="0"></label><label>Bilyard narxi<input id="setPool" type="number" min="0"></label><label>Snake narxi<input id="setSnake" type="number" min="0"></label></div><div class="settings-grid toggles"><label><input id="enChess" type="checkbox"> Shaxmat faol</label><label><input id="enPool" type="checkbox"> Bilyard faol</label><label><input id="enSnake" type="checkbox"> Snake faol</label></div><button class="primary" id="saveSettings">SOZLAMALARNI SAQLASH</button><div class="admin-coins"><input id="targetUser" placeholder="Foydalanuvchi ID"><input id="coinAmount" type="number" placeholder="Coin (+/-)"><button id="giveCoins">COIN O‘ZGARTIRISH</button></div></section>
+</main>
+<div class="modal hidden" id="modal"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+<nav class="bottom-nav"><button class="active">⌂<small>Bosh sahifa</small></button><button id="navGames">♜<small>O‘yinlar</small></button><button id="navRating">♛<small>Reyting</small></button><button id="navDonate">✧<small>Donat</small></button></nav>
+<script src="/app.js"></script>
+</body></html>
